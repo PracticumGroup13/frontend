@@ -5,7 +5,7 @@ body {
     position: relative;
     width: 1920px;
     height: 1080px;
-    background-color: var(--color-back);
+    background-color: var(--color-quaternary);
     overflow: hidden;
 }
 
@@ -41,7 +41,7 @@ img {
 #toggle-theme {
     width: 85px;
     height: 45px;
-    background-color:var(--color-native);
+    background-color:var(--color-quinary);
     padding: 0;
     border: none;
     border-radius: 22.5px;
@@ -52,18 +52,18 @@ img {
 
 .theme-dark {
     --color-primary:#79B4B7;
-    --color-sec:#F8F0DF;
-    --color-third:#9D9D9D;
-    --color-back:beige;
-    --color-native:#0f044c;
+    --color-secondary:#F8F0DF;
+    --color-tertiary:#9D9D9D;
+    --color-quaternary:beige;
+    --color-quinary:#0f044c;
 }
 
 .theme-light {
     --color-primary:#0f044c;
-    --color-sec:#EEEEEE;
-    --color-third:#141E61;
-    --color-back:darkslateblue;
-    --color-native:#79B4B7;
+    --color-secondary:#EEEEEE;
+    --color-tertiary:#141E61;
+    --color-quaternary:darkslateblue;
+    --color-quinary:#79B4B7;
 }
 
 #slider {
@@ -95,9 +95,9 @@ img {
     height: 578px;
     left: 510px;
     top: 261px;
-    background-color: var(--color-sec);
+    background-color: var(--color-secondary);
     border-radius: 23px;
-    border:5px solid var(--color-third);
+    border:5px solid var(--color-tertiary);
     animation-name: FadeIn;
     animation-duration: 1s;
     animation-direction: alternate;
@@ -108,7 +108,7 @@ img {
     width: 901px;
     height: 170px;
     border-radius: 15px 15px 0px 0px;
-    background-color: var(--color-third);
+    background-color: var(--color-tertiary);
     right: 0.002px;
 }
 
@@ -153,7 +153,7 @@ img {
 .swaphistory {
     position: absolute;
     bottom: 320px;
-    background-color: var(--color-sec);
+    background-color: var(--color-secondary);
     border: none;
     left: 790px;
     z-index: 3;
@@ -168,7 +168,7 @@ img {
 .swaphome {
     position: absolute;
     bottom: 320px;
-    background-color: var(--color-sec);
+    background-color: var(--color-secondary);
     border: none;
     left: 1450px;
     z-index: 3;
@@ -189,7 +189,7 @@ img {
     width: 1561px;
     height: 170px;
     border-radius: 15px 15px 0px 0px;
-    background-color: var(--color-third);
+    background-color: var(--color-tertiary);
     left: 0.02px;
 }
 
@@ -227,9 +227,9 @@ img {
     height: 578px;
     left: 181px;
     top: 261px;
-    background-color: var(--color-sec);
+    background-color: var(--color-secondary);
     border-radius: 23px;
-    border:5px solid var(--color-third);
+    border:5px solid var(--color-tertiary);
     display: inline;
     animation-name: FadeIn;
     animation-duration: 1s;
@@ -246,9 +246,9 @@ img {
     font-family: 'Lobster';
     font-size: 64px;
     color: white;
-    background-color: var(--color-third);
+    background-color: var(--color-tertiary);
     border: 5px solid;
-    border-color: var(--color-sec);
+    border-color: var(--color-secondary);
 }
 
 @keyframes FadeIn {
