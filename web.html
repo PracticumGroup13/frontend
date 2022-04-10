@@ -1,170 +1,111 @@
 <!DOCTYPE html>
 <html>
-<head>
+    <head>
+        <title>Magic Door</title>        
+        <link rel="stylesheet" href="web.css">
+    </head>
 
-
-    <!-- <script src="https://www.editeyusercontent.com/preview/1c_hhRGD3bhwOtWwfBD8QofW9rD3T1kbe/code.js"></script>
-    <script>console.log(fetchfile("test.txt"))</script> -->
-<title>maikand</title>        
-<link rel="stylesheet" href="web.css">
-</head>
-
-<body>
-
-
-        <div class="test">
+    <body>
+        <div class="navbar">
             <p class="title">Magic Door</p>
-            <button id="toggle" onclick="toggleTheme(); change()"><span id="slider"></span></button>
+            <button id="toggle-theme" onclick="toggleTheme(); change()">
+                <span id="slider"></span>
+            </button>
         </div>
-        <div id="table" class="tablestyle">
-            <div class="ellipse"></div>
+
+        <div id="home" class="home-style">
+            <div class="home-ellipse"></div>
             <p class="table-title">Room 204</p>
-            <iframe id='iframecount' src = 'count.txt'   > </iframe>
+            <iframe id='iframecount' src = 'count.txt'> </iframe>
             <p class="table-in">In :</p>
-            <p class="eiei"><iframe id='iframeremaining' src = 'remaining.txt'   > </iframe></p>
+            <iframe id='iframeremaining' src = 'remaining.txt'> </iframe>
             <p class="table-remain">Remain :</p>
-            <button onclick="showhistory()" class="swaphistory">
+            <button onclick="swap()" class="swaphistory">
                 <img src="http://cdn.onlinewebfonts.com/svg/img_530089.png" alt="history">
             </button>                
-            
         </div>
+
         <div id="history" class="historystyle">
             <div class="history-ellipse"></div>
             <p class="table-title">History</p>
             <iframe id='iframeinfo' src = 'info.log'   > </iframe>
-            <button onclick="showhistory()" class="swaptable">
-                <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="history">
+            <button onclick="swap()" class="swaphome">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="home">
             </button>
         </div>
+            
         <button onClick="window.location.reload();" id="refresh">Refresh Page</button>
-    
-<script>
+        
+        <script>
 
-function  showhistory() {
-   var element = document.getElementById("table");
-   element.classList.toggle("tablehide");
-   element = document.getElementById("history");
-   element.classList.toggle("historyshow");
-}
+            var change = function() {
+                var backgr = document.body,
+                slider = document.getElementById('slider');
+                if (backgr.style.backgroundColor == "beige") {
+                    backgr.style.backgroundColor = "darkslateblue";
+                    slider.style.float = 'right';
+                } else {
+                    backgr.style.backgroundColor = "beige";
+                    slider.style.float = 'left';  
+                }
+            }
+                
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+                
+            function toggleTheme() {
+                var backgra = document.body;
+                if (localStorage.getItem('theme') === 'theme-dark' && backgra.style.backgroundColor == 'beige') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
 
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-dark');
+                } else {
+                    setTheme('theme-light');
+                }
+            })();
 
+            function  swap() {
+                var element = document.getElementById("home");
+                element.classList.toggle("hide-home");
+                element = document.getElementById("history");
+                element.classList.toggle("show-history");
+            }
 
-function  showtable() {
-    var element = document.getElementById("table");
-   element.classList.toggle("tablestyle");
-   element = document.getElementById("history");
-   element.classList.toggle("historystyle");
+            var frame_count = document.getElementById('iframecount');
+            frame_count.onload = function () {
+                
+                var body = frame_count.contentWindow.document.querySelector('body');
+                body.style.color = 'black';
+                body.style.fontSize = '100px';
+                body.style.lineHeight = '20px';
+                body.style.textAlign = "center";
+            };
 
-}
+            var frame_remaining = document.getElementById('iframeremaining');
+            frame_remaining.onload = function () {
+                var body = frame_remaining.contentWindow.document.querySelector('body');
+                body.style.color = 'black';
+                body.style.fontSize = '100px';
+                body.style.lineHeight = '20px';                
+                body.style.textAlign = "center";
+            };
 
-
-
-
-//   var change = function() {
-//   var backgr = document.body,
-//   slider = document.getElementById('slider');
-
-//   if (backgr.style.backgroundColor == '#FEFBF3') {
-//     backgr.style.backgroundColor = '#787A91';
-//     slider.style.float = 'right';
-//   } else {
-//     backgr.style.backgroundColor = '#FEFBF3';
-//     slider.style.float = 'left';
-//   }
-// }
-
-
-var frameremain = document.getElementById('iframeremaining');
-        frameremain.onload = function () {
-            var body = frameremain.contentWindow.document.querySelector('body');
-            body.style.color = 'black';
-            body.style.fontSize = '100px';
-            body.style.lineHeight = '20px';
-            body.style.textAlign = "center";
-
-        };
-
-
-var frame = document.getElementById('iframecount');
-        frame.onload = function () {
-            var body = frame.contentWindow.document.querySelector('body');
-            body.style.color = 'black';
-            body.style.fontSize = '100px';
-            body.style.lineHeight = '20px';
-            body.style.textAlign = "center";
-
-        };
-
-
-var frameinfo = document.getElementById('iframeinfo');
-        frameinfo.onload = function () {
-            var body = frameinfo.contentWindow.document.querySelector('body');
-            body.style.color = 'black';
-            body.style.fontSize = '40px';
-            body.style.lineHeight = '50px';
-            body.style.textAlign = "center";
-
-        };
-
-var change = function() {
-  var backgr = document.body,
-  slider = document.getElementById('slider');
-
-  if (backgr.style.backgroundColor == "beige") {
-    backgr.style.backgroundColor = "darkslateblue";
-    slider.style.float = 'right';
-  } else {
-    backgr.style.backgroundColor = "beige";
-    slider.style.float = 'left';
-  }
-}
-
-
-
-    // function to set a given theme/color-scheme
-    function setTheme(themeName) {
-        localStorage.setItem('theme', themeName);
-        document.documentElement.className = themeName;
-    }
-
-
-    // function to toggle between light and dark theme
-    function toggleTheme() {
-        var backgra = document.body;
-        if (localStorage.getItem('theme') === 'theme-dark' && backgra.style.backgroundColor == 'beige') {
-            setTheme('theme-light');
-        } else {
-            setTheme('theme-dark');
-        }
-    }
-
-
-
-
-
-    // Immediately invoked function to set the theme on initial load
-    (function () {
-        if (localStorage.getItem('theme') === 'theme-dark') {
-            setTheme('theme-dark');
-        } else {
-            setTheme('theme-light');
-        }
-    })();
-
-
-    // function showhistory() {
-    //     var backgra = document.body;
-    //     if (localStorage.getItem('theme') === 'table' ) {
-    //         setTheme('tablehide');
-    //     } else {
-    //         setTheme('table');
-    //     }
-    // }
-
-
-
-</script>
-
-</body>
-
+            var frame_info = document.getElementById('iframeinfo');
+            frame_info.onload = function () {
+                var body = frame_info.contentWindow.document.querySelector('body');
+                body.style.color = 'black';
+                body.style.fontSize = '40px';
+                body.style.lineHeight = '50px';
+                body.style.textAlign = "center";
+            };
+        </script>
+    </body>
 </html>

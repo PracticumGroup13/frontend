@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap%27');
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 
-
-
 body {
     position: relative;
     width: 1920px;
@@ -11,29 +9,46 @@ body {
     overflow: hidden;
 }
 
-
-
-#iframecount {
-    position: absolute;
-    bottom: 110px;
-    left: 440px;
-    border: none;
-    width: 300px;
-    height: 300px;
-   
-  
+img {
+    height: 50px;
+    width: 50px;
 }
 
-#iframeremaining {
+.navbar {  
     position: absolute;
-    bottom: -10px;
-    left: 550px;
-    border: none;
-    width: 300px;
-    height: 300px;
-
+    width: 1920px;
+    height: 190px;
+    left: -8px;
+    top: -6px;   
+    background-color: var(--color-primary);
 }
 
+.title {
+    position: absolute;
+    width: 584px;
+    height: 160px;
+    left: 668px;
+    top: -120px;
+    font-family: 'Lobster';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 128px;
+    line-height: 160px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#toggle-theme {
+    width: 85px;
+    height: 45px;
+    background-color:var(--color-native);
+    padding: 0;
+    border: none;
+    border-radius: 22.5px;
+    position: absolute;
+    left: 1730px;
+    top: 70px
+}
 
 .theme-dark {
     --color-primary:#79B4B7;
@@ -51,74 +66,13 @@ body {
     --color-native:#79B4B7;
 }
 
-
-.title {
-    position: absolute;
-width: 584px;
-height: 160px;
-left: 668px;
-top: -120px;
-
-font-family: 'Lobster';
-font-style: normal;
-font-weight: 400;
-font-size: 128px;
-line-height: 160px;
-color: #FFFFFF;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-
-
-
-.tablestyle {
-    position: absolute;
-    width: 900px;
-    height: 578px;
-    left: 510px;
-    top: 261px;
-    background-color: var(--color-sec);
-    border-radius: 23px;
-    border:5px solid var(--color-third);
-    animation-name: FadeIn;
-    animation-duration: 1s;
-    animation-direction: alternate;
-    /* display: none; */
-}
-
-.tablehide {
-    display: none;
-}
-
-
-.ellipse {
-    position: absolute;
-    width: 901px;
-    height: 170px;
-    border-radius: 15px 15px 0px 0px;
-    background-color: var(--color-third);
-    right: 0.002px;
-}
-
-
-.table-remain {
-    text-align: center;
-    position: relative;
-    font-size: 100px;
-    line-height: 100px;
-    font-family: 'Courier Prime';
-    bottom: 200px;
-    right: 100px;
-}
-
-.table-in {
-    text-align: center;
-    position: relative;
-    font-size: 100px;
-    line-height: 100px;
-    font-family: 'Courier Prime';
-    bottom: 120px;
-    right: 100px;
+#slider {
+    width: 46px;
+    height: 46px;
+    background-color: #FEFBF3;
+    margin: 1px;
+    border-radius: 50%;
+    float: right;
 }
 
 .table-title{
@@ -135,68 +89,83 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     color: #FFFFFF;
 }
 
-/* .switch {
+.home-style {
+    position: absolute;
+    width: 900px;
+    height: 578px;
+    left: 510px;
+    top: 261px;
+    background-color: var(--color-sec);
+    border-radius: 23px;
+    border:5px solid var(--color-third);
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-direction: alternate;
+}
+
+.home-ellipse {
+    position: absolute;
+    width: 901px;
+    height: 170px;
+    border-radius: 15px 15px 0px 0px;
+    background-color: var(--color-third);
+    right: 0.002px;
+}
+
+#iframecount {
+    position: absolute;
+    bottom: 110px;
+    left: 440px;
+    border: none;
     width: 300px;
     height: 300px;
-    border-radius: 150px;
-
-} */
-
-
-#toggle {
-  width: 90px;
-  height: 45px;
-  background-color:var(--color-native);
-  padding: 0;
-  border: none;
-  border-radius: 22.5px;
-  position: absolute;
-  left: 1730px;
-  top: 70px
-}
-#slider {
-  width: 45px;
-  height: 45px;
-  background-color: #FEFBF3;
-  margin: 1px;
-  border-radius: 50%;
-  float: right;
 }
 
-
-
-.test {
-    
+#iframeremaining {
     position: absolute;
-    width: 1920px;
-    height: 190px;
-    left: -8px;
-    top: -6px;   
-    background-color: var(--color-primary);
+    bottom: -10px;
+    left: 550px;
+    border: none;
+    width: 300px;
+    height: 300px;
 }
 
+.table-in {
+    text-align: center;
+    position: relative;
+    font-size: 100px;
+    line-height: 100px;
+    font-family: 'Courier Prime';
+    bottom: 120px;
+    right: 100px;
+}
+
+.table-remain {
+    text-align: center;
+    position: relative;
+    font-size: 100px;
+    line-height: 100px;
+    font-family: 'Courier Prime';
+    bottom: 200px;
+    right: 100px;
+}
 
 .swaphistory {
     position: absolute;
-    /* background-color: #0f044c; */
     bottom: 320px;
     background-color: var(--color-sec);
     border: none;
     left: 790px;
     z-index: 3;
-    /* height: 50px;
-    width: 50px;
-    border-radius: 50%; */
     transition-duration: 0.7s;
 
 }
 
- .swaphistory:hover {
+.swaphistory:hover {
     transform: translateY(-7px);
 } 
 
-
-.swaptable {
+.swaphome {
     position: absolute;
     bottom: 320px;
     background-color: var(--color-sec);
@@ -207,38 +176,13 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
 
-
-.swaptable:hover {
+.swaphome:hover {
     transform: translateY(-7px);
 } 
-
-img {
-    height: 50px;
-    width: 50px;
-}
-
-
 
 .historystyle {
     display: none;
 }
-
-.historyshow {
-    position: absolute;
-    width: 1558px;
-    height: 578px;
-    left: 181px;
-    top: 261px;
-    background-color: var(--color-sec);
-    border-radius: 23px;
-    border:5px solid var(--color-third);
-    display: inline;
-    animation-name: FadeIn;
-    animation-duration: 1s;
-    animation-direction: alternate;
-    /* z-index: 4; */
-}
-
 
 .history-ellipse {
     position: absolute;
@@ -273,6 +217,24 @@ img {
 
 }
 
+.hide-home {
+    display: none;
+}
+
+.show-history {
+    position: absolute;
+    width: 1558px;
+    height: 578px;
+    left: 181px;
+    top: 261px;
+    background-color: var(--color-sec);
+    border-radius: 23px;
+    border:5px solid var(--color-third);
+    display: inline;
+    animation-name: FadeIn;
+    animation-duration: 1s;
+    animation-direction: alternate;
+}
 
 #refresh {
     position: absolute;
@@ -299,5 +261,4 @@ img {
     100%{
         opacity: 1;
     }
-
 }
