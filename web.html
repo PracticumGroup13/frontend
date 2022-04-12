@@ -28,7 +28,7 @@
         <div id="history" class="historystyle">
             <div class="history-ellipse"></div>
             <p class="table-title">History</p>
-            <iframe id='iframeinfo' src = 'info.log'   > </iframe>
+            <iframe id='iframeinfo' src = 'enter.log'   > </iframe>
             <button onclick="swap()" class="swaphome">
                 <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="home">
             </button>
@@ -81,7 +81,6 @@
 
             var frame_count = document.getElementById('iframecount');
             frame_count.onload = function () {
-                
                 var body = frame_count.contentWindow.document.querySelector('body');
                 body.style.color = 'black';
                 body.style.fontSize = '100px';
